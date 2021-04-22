@@ -12,7 +12,7 @@
     </div>
     <ul class="nav" >
       <li v-ripple @click="$router.push('/calendar')">
-        <h5>일별매출</h5>
+        <h5>매출캘린더</h5>
         <v-icon>
           mdi-chevron-right
         </v-icon>

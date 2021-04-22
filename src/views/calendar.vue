@@ -17,17 +17,6 @@
             <v-icon>mdi-chevron-right</v-icon>
           </v-btn>
         </div>
-
-        <div class="test">
-          <h4>테스트 달력</h4>
-          <div>{{today}}</div>
-          <div>{{year}}</div>
-          <div>{{month}}</div>
-          <div>{{day}}</div>
-          <div>{{firstDay}}</div>
-          <div>{{lastDay}}</div>
-          <div></div>
-        </div>
         
         <div class="calendar">
           <div class="col" v-for="(day, index) in 31" :key="index">
