@@ -38,6 +38,7 @@ export default {
   height:50px;
   border-bottom:1px solid #e2e2e2;
   background:#fff;
+  z-index:99;
 
   .left{
     padding-left:10px;

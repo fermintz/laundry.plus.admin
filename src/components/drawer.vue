@@ -10,9 +10,21 @@
       <h2>Laundry Plus</h2>
       <h5>세탁플러스</h5>
     </div>
-    <ul class="nav">
-      <li v-ripple>
-        <h5>월별매출통계</h5>
+    <ul class="nav" >
+      <li v-ripple @click="$router.push('/calendar')">
+        <h5>일별매출</h5>
+        <v-icon>
+          mdi-chevron-right
+        </v-icon>
+      </li>
+      <li v-ripple @click="$router.push('/monthSales')">
+        <h5>월별매출</h5>
+        <v-icon>
+          mdi-chevron-right
+        </v-icon>
+      </li>
+      <li v-ripple @click="$router.push('/eqUseList')">
+        <h5>장비사용내역</h5>
         <v-icon>
           mdi-chevron-right
         </v-icon>
@@ -23,12 +35,13 @@
           mdi-chevron-right
         </v-icon>
       </li>
-      <li v-ripple>
-        <h5>장비원격내역</h5>
+      <li v-ripple @click="$router.push('/member')">
+        <h5>회원관리</h5>
         <v-icon>
           mdi-chevron-right
         </v-icon>
       </li>
+      
     </ul>
     <div class="btns">
       <v-btn text class="logout">로그아웃</v-btn>
@@ -54,6 +67,7 @@ export default {
 
 <style lang="scss" scoped>
 .drawer{
+  z-index:999;
 
   .logo{
     width:240px;

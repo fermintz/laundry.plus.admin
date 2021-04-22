@@ -2,17 +2,30 @@
   <Base>
     <div class="eqList">
       <div class="page-head">
-        <h2>장비관리</h2>
-        <div class="search-box">
-          
-        </div>
-      </div>
+        <v-row>
+          <v-col  cols="12" md="8">
+            <h2>장비관리</h2>
+          </v-col>
+          <v-col cols="12"  md="4">
+            <v-autocomplete
+            v-model="values"
+            :items="items"
+            hide-details
+            outlined
+            dense
+            chips
+            small-chips
+            multiple
+            />
+          </v-col>
+        </v-row>
+       </div>
 
       <v-row>
         <v-col lg="4" md="6" v-for="item in 10" :key="item">
           <div class="card">
             <div class="card-head">
-              <h4>1번세탁기</h4>
+              <h4>{{item}}번세탁기</h4>
               <div class="state">
                 <h5>동작중</h5>
               </div>
@@ -30,30 +43,41 @@
             </div>
 
             <div class="card-bottom">
-              <v-btn text>원격제어</v-btn>
-              <v-btn text>사용</v-btn>
+              <v-btn text @click="$refs.eqControl.handle(true)">원격제어</v-btn>
+              <v-btn text @click="$refs.message.handle(true)">사용</v-btn>
               <v-btn text>중지</v-btn>
             </div>
           </div>
         </v-col>
       </v-row>
     </div>
+
+      <EqControl  ref="eqControl" />
+      <Message 
+        ref="message"  
+        title="장비사용"
+        text="장비를 사용으로 변경하시겠습니까?"
+      />
   </Base>
 </template>
 
 <script>
 import Base from "@/components/layout/base.vue";
+import EqControl from '@/components/modal/eqControl.vue';
+import Message from '@/components/modal/message.vue';
+
 
 export default {
   name: "Home",
   components: {
-    Base,
+    Base, EqControl, Message
   },
   data() {
     return {
       switch1: false,
-      select: ["Vuetify", "Programming"],
-      items: ["Programming", "Design", "Vue", "Vuetify"],
+      items: ['foo', 'bar', 'fizz', 'buzz'],
+      values: ['foo', 'bar'],
+      value: null,
     };
   },
 };
@@ -61,13 +85,9 @@ export default {
 
 <style lang="scss" scoped>
 .eqList {
-  .page-head {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
 
+  .page-head {
+    margin-bottom: 20px;
     h2 {
       font-weight: 500;
     }

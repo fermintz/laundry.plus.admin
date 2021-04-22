@@ -1,6 +1,7 @@
 #app{
   h1,h2,h3,h4,h5,h6{
     font-family:'SCDream';
+    font-weight:500;
   }
 
   ul,ol{
@@ -15,5 +16,72 @@
 
   dt{
     font-family:'SCDream'
+  }
+
+  input::placeholder{
+    font-size:14px;
+    color:#999;
+  }
+
+  .v-data-table-header-mobile__wrapper{
+    padding:15px 0;
+  }
+ 
+  td.v-data-table__mobile-row{
+    padding:0 20px;
+    min-height:unset;
+    padding-bottom:15px;
+  }
+
+  td.v-data-table__mobile-row:first-child{
+    margin-top:15px;
+  }
+ 
+
+  .v-input--selection-controls__input{
+    margin-right:5px;
+  }
+  .v-label{
+    font-size:14px;
+  }
+
+}
+
+.box{
+  padding:20px;
+  background:#fff;
+  border:1px solid #e2e2e2;
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.05);
+}
+
+
+.modal {
+  width: 100%;
+  background: #fff;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1100ff;;
+    padding: 0 20px;
+    height: 50px;
+
+    h4{
+      color:#fff;
+    }
+  }
+
+  .cont {
+    padding: 20px;
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid #e2e2e2;
+    height: 50px;
+    padding:0 10px;
   }
 }
